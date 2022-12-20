@@ -2,9 +2,7 @@
 
 This was an ETL pipeline for histology analysis that I built for a startup a few years ago interfacing with Zeiss, Airtable and AWS. 
 
-==========
-histo
-==========
+
 #### Installation (within an EC2 with a GPU):
 
 1. `nano . ~/.bashrc`
