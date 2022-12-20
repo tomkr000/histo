@@ -1,4 +1,4 @@
-name: coda_histo
+name: histo
 channels:
   - cyclus
   - defaults
