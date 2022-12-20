@@ -1,16 +1,19 @@
+###Disclaimer
+This was an ETL pipeline for histology analysis that I built for a startup a few years ago interfacing with Zeiss, Airtable and AWS. 
+
 ==========
-coda_histo
+histo
 ==========
 #### Installation (within an EC2 with a GPU):
 
 1. `nano . ~/.bashrc`
 
 2. add to the bottom `export JAVA_HOME=${JAVA_HOME}:/usr/lib/jvm/default-java`
-3. `git clone https://tomroseberry@bitbucket.org/tomroseberry/coda_histo.git`
-4. `cd coda_histo`
+3. `git clone <repo>
+4. `cd histo`
 5. `conda env create -f environment.yml`
-6. `conda activate coda_histo`
-7. cd to coda_histo and type `python setup.py develop`
+6. `conda activate histo`
+7. cd to histo and type `python setup.py develop`
 8. to mount the histology bucket as `/histo` on your EC2:
 sudo s3fs histology-0b171b86-25d4-40c1-847b-ab4f82275e01 -o use_cache=/tmp -o allow_other -o uid=1000 -o mp_umask=0277 -o multireq_max=5 /histo -o nonempty
 9. Make sure you are running CUDA10 or CUDA10.1 or CUDA10.2 ($nvidia-smi) and replace the installed mxnet version with the appropriate cuda version:
