@@ -1,6 +1,6 @@
 ### Disclaimer
 
-This was an ETL pipeline for histology analysis that I built for a startup a few years ago interfacing with Zeiss, Airtable and AWS. 
+This was an ETL pipeline for histology analysis that I built for a startup a few years ago interfacing with Zeiss, Airtable and AWS. The company is now out of business, but hopefully someone might be able to use some of the work here. Names have been changed, etc for confidentiality.
 
 
 #### Installation (within an EC2 with a GPU):
@@ -14,7 +14,7 @@ This was an ETL pipeline for histology analysis that I built for a startup a few
 6. `conda activate histo`
 7. cd to histo and type `python setup.py develop`
 8. to mount the histology bucket as `/histo` on your EC2:
-sudo s3fs histology-0b171b86-25d4-40c1-847b-ab4f82275e01 -o use_cache=/tmp -o allow_other -o uid=1000 -o mp_umask=0277 -o multireq_max=5 /histo -o nonempty
+sudo s3fs histology -o use_cache=/tmp -o allow_other -o uid=1000 -o mp_umask=0277 -o multireq_max=5 /histo -o nonempty
 9. Make sure you are running CUDA10 or CUDA10.1 or CUDA10.2 ($nvidia-smi) and replace the installed mxnet version with the appropriate cuda version:
 
 pip uninstall mxnet-mkl
